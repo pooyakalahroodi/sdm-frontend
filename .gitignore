@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# builds
+dist/
+build/
+
+# env
+.env
+.env.*.local
+
+# tooling caches
+.vite/
+.eslintcache
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# editors/OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

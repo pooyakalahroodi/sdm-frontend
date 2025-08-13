@@ -1,0 +1,16 @@
+/* src/styles/tokens.css */
+:root{
+  --bg:#0b0d10;
+  --card:#14181f;
+  --text:#e6e9ef;
+  --muted:#9aa7b2;
+  --primary:#4f8cff;
+  --success:#22c55e;
+  --warn:#f59e0b;
+  --danger:#ef4444;
+  --border:#2a2f3a;
+  --radius:8px;
+  --shadow:0 4px 16px rgba(0,0,0,.3);
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-6:24px;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
