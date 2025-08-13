@@ -1,4 +1,4 @@
-import type { DeviceStatus } from './enums';
+import { DeviceStatus } from './enums';
 
 export type Device = {
   id: number;
