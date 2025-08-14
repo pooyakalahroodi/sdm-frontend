@@ -1,5 +1,5 @@
 // src/features/devices/components/DevicesTable.tsx
-import { useDevicesQuery, useSetActive } from '../hooks'
+import { useDevicesQuery } from '../hooks'
 import type { Device } from '../../../models/device'
 
 function StatusBadge({ status }: { status: Device['status'] }) {
@@ -11,7 +11,6 @@ function StatusBadge({ status }: { status: Device['status'] }) {
 
 export default function DevicesTable() {
   const { data: devices, isLoading, isFetching, error } = useDevicesQuery()
-  const setActive = useSetActive()
 
   return (
     <>
@@ -20,14 +19,18 @@ export default function DevicesTable() {
         <table className="table">
           <thead>
             <tr>
-              <th>ID</th><th>Name</th><th>Serial</th><th>Status</th>
-              <th style={{textAlign:'right'}}>Actions</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Serial Number</th>
+              <th>Status</th>
+              <th>Manufacturer</th>
+              <th>Location</th>
+              <th>Purchase Date</th>
             </tr>
           </thead>
           <tbody>
             {devices?.map(d => (
               <tr key={d.serialNumber}>
-                <td>{d.id}</td>
                 <td>{d.name}</td>
                 <td>{d.type}</td>
                 <td>{d.serialNumber}</td>
@@ -35,15 +38,12 @@ export default function DevicesTable() {
                 <td>{d.manufacturer}</td>
                 <td>{d.location}</td>
                 <td>{d.purchaseDate}</td>
-                <td style={{textAlign:'right'}}>
-                  <button className="btn btn-ghost" onClick={()=>setActive.mutate(d.serialNumber)}>
-                    Set Active
-                  </button>
-                </td>
               </tr>
             ))}
             {(!devices || devices.length === 0) && !isLoading && (
-              <tr><td colSpan={5} style={{padding:18, color:'var(--muted)'}}>No devices yet. Add one above.</td></tr>
+              <tr>
+                <td colSpan={7} style={{padding:18, color:'var(--muted)'}}>No devices yet. Add one above.</td>
+              </tr>
             )}
           </tbody>
         </table>

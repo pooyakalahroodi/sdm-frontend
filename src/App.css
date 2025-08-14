@@ -40,3 +40,94 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Navbar professional look */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #23272f;
+  padding: 16px 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.toolbar h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.tabs {
+  display: flex;
+  gap: 16px;
+}
+
+.tabs .btn {
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.tabs .btn.active,
+.tabs .btn:hover,
+.tabs .btn[aria-current="page"] {
+  background: #3a4052;
+  color: #61dafb;
+  font-weight: 500;
+}
+
+/* Modern Navbar Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #23272f 60%, #2d3340 100%);
+  padding: 12px 24px;     /* Reduce padding */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.navbar-brand h1 {
+  font-size: 1rem;      /* Even smaller font size */
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.navbar-tabs {
+  display: flex;
+  gap: 18px; /* Slightly less space between links */
+}
+
+.navbar-link {
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 0.95rem;    /* Smaller link font size */
+  padding: 7px 14px;     /* Smaller padding */
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+.navbar-link.active,
+.navbar-link:hover,
+.navbar-link[aria-current="page"] {
+  background: #3a4052;
+  color: #61dafb;
+  box-shadow: 0 2px 8px rgba(97,218,251,0.08);
+}

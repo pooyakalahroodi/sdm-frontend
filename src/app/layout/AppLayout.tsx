@@ -1,20 +1,23 @@
 // src/app/layout/AppLayout.tsx
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import '../../App.css' // Import the global styles
 
 export default function AppLayout() {
   return (
     <div className="container">
-      <header className="toolbar" style={{justifyContent:'space-between'}}>
-        <h1>Simple Management</h1>
-        <nav className="tabs" role="tablist" aria-label="Sections" style={{display:'flex', gap:8}}>
-          <NavLink to="/devices" className="btn" end>Devices</NavLink>
-          <NavLink to="/users" className="btn">Users</NavLink>
-          <NavLink to="/departments" className="btn">Departments</NavLink>
-          <NavLink to="/protocols" className="btn">Handover Protocols</NavLink>
+      <header className="navbar">
+        <div className="navbar-brand">
+          <h1>Simple Management</h1>
+        </div>
+        <nav className="navbar-tabs" role="navigation" aria-label="Main Navigation">
+          <NavLink to="/devices" className="navbar-link" end>Devices</NavLink>
+          <NavLink to="/users" className="navbar-link">Users</NavLink>
+          <NavLink to="/departments" className="navbar-link">Departments</NavLink>
+          <NavLink to="/protocols" className="navbar-link">Handover Protocols</NavLink>
         </nav>
       </header>
-      <main style={{marginTop:16}}>
+      <main style={{marginTop:24}}>
         <Outlet />
       </main>
     </div>
