@@ -1,14 +1,11 @@
 export type User = {
   id: number;
   username: string;
-  name: string;
-  surname: string;
-  // null/undefined permitted if backend can return missing department
-  departmentName?: string | null;
+  firstName: string;
+  lastName: string;
+  email: string;
+  department: string;
+  active: boolean;
 };
 
-export type CreateUser = {
-  username: string;
-  name: string;
-  surname: string;
-};
+export type CreateUser = Omit<User, 'id'>;

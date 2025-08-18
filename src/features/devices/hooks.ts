@@ -16,19 +16,19 @@ export function useCreateDevice() {
   })
 }
 
-export function useSetActive() {
-  const qc = useQueryClient()
-  return useMutation({
-    mutationFn: (serial: string) => updateDeviceStatus(serial, 'Active'),
-    onMutate: async (serial) => {
-      await qc.cancelQueries({ queryKey: devicesKeys.list() })
-      const prev = qc.getQueryData<Device[]>(devicesKeys.list())
-      qc.setQueryData<Device[]>(devicesKeys.list(), (cur)=>
-        (cur ?? []).map(d => d.serialNumber === serial ? { ...d, status: 'Active' } : d)
-      )
-      return { prev }
-    },
-    onError: (_e,_v,ctx)=>{ if (ctx?.prev) qc.setQueryData(devicesKeys.list(), ctx.prev) },
-    onSettled: ()=> qc.invalidateQueries({ queryKey: devicesKeys.list() }),
-  })
-}
+// export function useSetActive() {
+//   const qc = useQueryClient()
+//   return useMutation({
+//     mutationFn: (serial: string) => updateDeviceStatus(serial, 'Active'),
+//     onMutate: async (serial) => {
+//       await qc.cancelQueries({ queryKey: devicesKeys.list() })
+//       const prev = qc.getQueryData<Device[]>(devicesKeys.list())
+//       qc.setQueryData<Device[]>(devicesKeys.list(), (cur)=>
+//         (cur ?? []).map(d => d.serialNumber === serial ? { ...d, status: 'Active' } : d)
+//       )
+//       return { prev }
+//     },
+//     onError: (_e,_v,ctx)=>{ if (ctx?.prev) qc.setQueryData(devicesKeys.list(), ctx.prev) },
+//     onSettled: ()=> qc.invalidateQueries({ queryKey: devicesKeys.list() }),
+//   })
+//}
