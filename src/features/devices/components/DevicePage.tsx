@@ -14,11 +14,6 @@ export default function DevicesPage() {
           {(isLoading || isFetching) && <div className="loader" aria-label="loading" />}
           <span className="kbd">API: /api/devices</span>
         </div>
-      </header>
-
-      <div style={{marginBottom:16}}>
-        <h3 style={{marginBottom:8}}>Add a Device</h3>
-        <DeviceForm />
       </div>
 
       <DevicesTable />
